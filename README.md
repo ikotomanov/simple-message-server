@@ -1,1 +1,1 @@
-# demo
+# Simple message server
