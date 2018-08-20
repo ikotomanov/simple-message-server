@@ -65,7 +65,7 @@ public class MessageControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                 .post(SEND_EMOTION_URL)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("101010"))
+                .content(":-)"))
                 .andExpect(MockMvcResultMatchers.status().isCreated());
     }
 
@@ -74,7 +74,7 @@ public class MessageControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                 .post(SEND_EMOTION_URL)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("-10"))
+                .content("101"))
                 .andExpect(MockMvcResultMatchers.status().isPreconditionFailed());
     }
 
@@ -83,7 +83,7 @@ public class MessageControllerTest {
         mockMvc.perform(MockMvcRequestBuilders
                 .post(SEND_EMOTION_URL)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("12345678900"))
+                .content("Too long emotion ;)"))
                 .andExpect(MockMvcResultMatchers.status().isPreconditionFailed());
     }
 

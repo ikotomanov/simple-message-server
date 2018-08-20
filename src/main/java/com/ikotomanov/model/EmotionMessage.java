@@ -7,7 +7,7 @@ public class EmotionMessage extends Message  {
 
     @Override
     @NotBlank
-    @Pattern(regexp = "[0-9]{2,10}")
+    @Pattern(regexp = "[^0-9]{2,10}")
     public String getContent() {
         return content;
     }
